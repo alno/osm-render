@@ -38,7 +38,7 @@
   shield-fill: black;
   shield-face-name: @font_bold;
   shield-character-spacing: 2;
-  shield-file: url(markers/road-ref.png);
+  shield-file: url(images/road-ref.png);
   shield-placement: line;
   shield-min-distance: 30;
   shield-spacing: 400;
