@@ -12,16 +12,16 @@
 #territories[type='forest'],
 #territories[type='wood'] {
   [zoom>=18] {
-    polygon-pattern-file: url('markers/forest-0.png')
+    polygon-pattern-file: url('images/forest-0.png')
   }
   [zoom<18][zoom>=16] {
-    polygon-pattern-file: url('markers/forest-1.png')
+    polygon-pattern-file: url('images/forest-1.png')
   }
   [zoom<16][zoom>=14] {
-    polygon-pattern-file: url('markers/forest-2.png')
+    polygon-pattern-file: url('images/forest-2.png')
   }
   [zoom<14] {
-    polygon-pattern-file: url('markers/forest-3.png')
+    polygon-pattern-file: url('images/forest-3.png')
   }
 }
 
@@ -43,7 +43,7 @@
   }
 
   [type='quarry'] {
-    line-pattern-file: url('markers/cliff-1.png');
+    line-pattern-file: url('images/cliff-1.png');
     polygon-fill: @quarry;
   }
 
@@ -68,13 +68,13 @@
   [type='farmland'],
   [type='farmyard'] {
     [zoom>=18] {
-      polygon-pattern-file: url('markers/farms-0.png')
+      polygon-pattern-file: url('images/farms-0.png')
     }
     [zoom>=16][zoom<18] {
-      polygon-pattern-file: url('markers/farms-1.png')
+      polygon-pattern-file: url('images/farms-1.png')
     }
     [zoom<16] {
-      polygon-pattern-file: url('markers/farms-2.png')
+      polygon-pattern-file: url('images/farms-2.png')
     }
   }
 
