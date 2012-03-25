@@ -22,14 +22,14 @@
 
   [type='cliff'] {
     [zoom>=15] {
-      line-pattern-file: url('markers/cliff-1.png')
+      line-pattern-file: url('images/cliff-1.png')
     }
     [zoom>=12][zoom<=14] {
-      line-pattern-file: url('markers/cliff-2.png')
+      line-pattern-file: url('images/cliff-2.png')
     }
   }
 
   [type='enbankment'][zoom>=15] {
-    line-pattern-file: url('markers/cliff-1.png')
+    line-pattern-file: url('images/cliff-1.png')
   }
 }
