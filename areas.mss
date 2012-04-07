@@ -68,10 +68,6 @@
     }
   }
 
-  [type='cemetery'] {
-    polygon-fill: @cemetery;
-  }
-
   [type='military'] {
     polygon-fill: @military;
     line-color: darken(@military, 20%);
@@ -107,25 +103,6 @@
     text-name: "[name]";
     text-fill: #111;
     text-halo-fill: fadeout(lighten(@industrial, 20%), 30%);
-    text-halo-radius: 1.5;
-    text-min-distance: 10;
-    text-min-padding: 2;
-    text-placement-type: simple;
-
-    [zoom >= 16] {
-      text-size: 12;
-    }
-    [zoom = 15] {
-      text-size: 11;
-    }
-  }
-
-  [type='cemetery'][zoom>=14] {
-    text-wrap-width: 40;
-    text-face-name: @font;
-    text-name: "[name]";
-    text-fill: #111;
-    text-halo-fill: fadeout(lighten(@cemetery, 20%), 30%);
     text-halo-radius: 1.5;
     text-min-distance: 10;
     text-min-padding: 2;
@@ -202,6 +179,11 @@
     polygon-fill: #94d58c;
   }
 
+  [type='grave_yard'],
+  [type='cemetery'] {
+    polygon-fill: @cemetery;
+    polygon-opacity: 0.5;
+  }
 
   [type='fuel'] {
     polygon-fill: @fuel;
@@ -257,6 +239,26 @@
     text-name: "[name]";
     text-fill: #111;
     text-halo-fill: fadeout(@education, 20%);
+    text-halo-radius: 1.5;
+    text-min-distance: 10;
+    text-min-padding: 2;
+    text-placement-type: simple;
+
+    [zoom >= 16] {
+      text-size: 12;
+    }
+    [zoom = 15] {
+      text-size: 11;
+    }
+  }
+
+  [type='grave_yard'][zoom>=14],
+  [type='cemetery'][zoom>=14] {
+    text-wrap-width: 40;
+    text-face-name: @font;
+    text-name: "[name]";
+    text-fill: #111;
+    text-halo-fill: fadeout(lighten(@cemetery, 20%), 30%);
     text-halo-radius: 1.5;
     text-min-distance: 10;
     text-min-padding: 2;
