@@ -14,13 +14,36 @@ Map {
     building-fill: #dd9a67;
   }
 
-  [zoom=18] {
-    building-height: 0.00003;
+  [zoom>=15] {
+    [levels<=1] {
+      building-height: 0.00001;
+    }
+    [levels=2] {
+      building-height: 0.00002;
+    }
+    [levels=3] {
+      building-height: 0.00003;
+    }
+    [levels=4] {
+      building-height: 0.00004;
+    }
+    [levels=5] {
+      building-height: 0.00005;
+    }
+    [levels=6] {
+      building-height: 0.00006;
+    }
+    [levels=7] {
+      building-height: 0.00007;
+    }
+    [levels=8] {
+      building-height: 0.00008;
+    }
+    [levels>=9] {
+      building-height: 0.00009;
+    }
   }
 
-  [zoom=17] {
-    building-height: 0.00002;
-  }
 }
 
 #building_labels::number[zoom>=16] {
@@ -29,7 +52,7 @@ Map {
   text-placements: "N,S";
   text-face-name: @font;
   text-label-position-tolerance: 50;
-  text-name: "[address_housenumber]";
+  text-name: "[housenumber]";
   text-fill: black;
   text-halo-fill: fadeout(white, 20%);
   text-halo-radius: 1;

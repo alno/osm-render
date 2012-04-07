@@ -566,6 +566,7 @@
       polygon-fill: fadeout(@footway, 50%);
     }
   }
+
 }
 
 #square_outlines {

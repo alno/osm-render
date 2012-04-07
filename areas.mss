@@ -196,19 +196,13 @@
     line-dasharray: 3, 3;
   }
 
-  [type='parking'][zoom>=12] {
-    polygon-fill: #f3f1cf;
-    line-width: 1px;
-    line-color: #8b712e;
-    line-dasharray: 3, 3;
-  }
-
   [type='park'],
   [type='playground'],
   [type='common'],
   [type='garden'],
   [type='zoo'] {
     polygon-fill: #b2e079;
+    polygon-opacity: 0.7;
   }
 
   [type='stadium'],
@@ -218,10 +212,6 @@
     polygon-fill: #94d58c;
   }
 
-  [type='parking'] {
-    polygon-fill: #f3f1cf;
-    line-color: #a48f49;
-  }
 
   [type='fuel'] {
     polygon-fill: @fuel;
@@ -237,6 +227,7 @@
   [type='college'],
   [type='university'] {
     polygon-fill: @education;
+    polygon-opacity: 0.5;
     line-color: #b3b373;
   }
 }

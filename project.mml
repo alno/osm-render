@@ -49,6 +49,17 @@
       "name": "territories"
     },
     {
+      "geometry": "raster",
+      "id": "hillshade",
+      "class": "",
+      "Datasource": {
+        "file": "hillshade.tif"
+      },
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "hillshade"
+    },
+    {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
@@ -71,17 +82,6 @@
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "name": "areas"
-    },
-    {
-      "geometry": "raster",
-      "id": "hillshade",
-      "class": "",
-      "Datasource": {
-        "file": "hillshade.tif"
-      },
-      "srs-name": "900913",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "name": "hillshade"
     },
     {
       "geometry": "linestring",
@@ -159,7 +159,7 @@
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "(SELECT *, ST_Area(geometry) AS area FROM osm_squares) AS t",
+        "table": "((SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM osm_squares) UNION (SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM osm_objects WHERE type='parking')) AS t",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -207,7 +207,7 @@
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "(SELECT *, tags->'covered' AS covered, ST_Area(geometry) AS area FROM osm_squares) AS t",
+        "table": "((SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM osm_squares) UNION (SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM osm_objects WHERE type='parking')) AS t",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -231,7 +231,7 @@
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_buildings",
+        "table": "(SELECT *, COALESCE((tags->'building:levels')::integer, 2) AS levels FROM osm_buildings ORDER BY st_y(st_centroid(geometry(geometry))) DESC) AS t",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
