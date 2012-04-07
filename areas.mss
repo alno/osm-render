@@ -11,18 +11,8 @@
 
 #territories[type='forest'],
 #territories[type='wood'] {
-  [zoom>=18] {
-    polygon-pattern-file: url('images/forest-0.png')
-  }
-  [zoom<18][zoom>=16] {
-    polygon-pattern-file: url('images/forest-1.png')
-  }
-  [zoom<16][zoom>=14] {
-    polygon-pattern-file: url('images/forest-2.png')
-  }
-  [zoom<14] {
-    polygon-pattern-file: url('images/forest-3.png')
-  }
+  building-fill: #539d33;
+  building-height: 0.00003;
 }
 
 #territories {

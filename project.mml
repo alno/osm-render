@@ -231,7 +231,7 @@
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "(SELECT *, COALESCE((tags->'building:levels')::integer, 2) AS levels FROM osm_buildings ORDER BY st_y(st_centroid(geometry(geometry))) DESC) AS t",
+        "table": "(SELECT *, COALESCE((tags->'building:levels')::integer, 3) AS levels FROM osm_buildings ORDER BY st_y(st_centroid(geometry(geometry))) DESC) AS t",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",

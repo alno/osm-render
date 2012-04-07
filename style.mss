@@ -39,8 +39,11 @@ Map {
     [levels=8] {
       building-height: 0.00008;
     }
-    [levels>=9] {
+    [levels=9] {
       building-height: 0.00009;
+    }
+    [levels>=10] {
+      building-height: 0.00010;
     }
   }
 
