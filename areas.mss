@@ -187,6 +187,7 @@
 
   [type='fuel'] {
     polygon-fill: @fuel;
+    polygon-opacity: 0.6;
   }
 
   [type='marketplace'] {
