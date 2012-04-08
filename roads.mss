@@ -9,7 +9,7 @@
 
 @footway: #eee;
 
-#road_labels {
+#road_labels[zoom>=13] {
   text-name: "[name]";
   text-fill: #333;
   text-face-name: @font;
@@ -40,8 +40,8 @@
   shield-character-spacing: 2;
   shield-file: url(images/road-ref.png);
   shield-placement: line;
-  shield-min-distance: 30;
-  shield-spacing: 400;
+  shield-min-distance: 50;
+  shield-spacing: 500;
   shield-min-padding: 10;
 }
 
