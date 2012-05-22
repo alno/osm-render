@@ -8,6 +8,8 @@
 @tri_road_color_in: white;
 
 @footway: #eee;
+@track: #714115;
+@path: #7b612e;
 
 #road_labels[zoom>=13] {
   text-name: "[name]";
@@ -68,7 +70,7 @@
   #roads::outline[type='pedestrian'][zoom>=17],
   #roads::outline[type='footway'][zoom>=17] {
     line-width: 4;
-    line-color: fadeout(#714115,50%);
+    line-color: fadeout(@track,50%);
     line-cap: butt;
 
     [covered=1] {
@@ -99,7 +101,7 @@
   #roads::inline[type='track'],
   #roads::inline[type='path'] {
     line-width: 1;
-    line-color: #714115;
+    line-color: @track;
     line-dasharray: 4, 4;
     line-cap: round;
   }
@@ -128,10 +130,17 @@
     }
   }
 
-  #roads::inline[type='steps'][zoom>=14] {
+  #roads::inline[type='steps'][zoom>=17] {
     line-width: 4;
-    line-color: #7b612e;
+    line-color: @path;
     line-dasharray: 2, 1;
+    line-cap: butt;
+  }
+
+  #roads::inline[type='steps'][zoom<17][zoom>=14] {
+    line-width: 2;
+    line-color: @path;
+    line-dasharray: 1, 1;
     line-cap: butt;
   }
 }
@@ -140,7 +149,7 @@
   ::inline[type='footway'][length>1000],
   ::inline[type='track'][length>1000],
   ::inline[type='path'] {
-    line-color: desaturate(#714115, 10%);
+    line-color: desaturate(@track, 10%);
     line-width: 0.5;
     line-dasharray: 2, 2;
   }
@@ -581,7 +590,7 @@
 
   [type='footway'],
   [type='pedestrian'] {
-    line-color: fadeout(#714115, 50%);
+    line-color: fadeout(@track, 50%);
   }
 
   [zoom>=17] {
