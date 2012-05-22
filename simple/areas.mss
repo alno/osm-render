@@ -6,8 +6,8 @@
 @quarry: #cccaca;
 @residential: #dae0ba;
 @grass: #b2d584;
-@farm: #bdd16d;
-@forest: #77a152;
+@farm: #c9d989;
+@forest: #609e4b;
 @military: #f1c2b2;
 @fuel: #a493bb;
 
