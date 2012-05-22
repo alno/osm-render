@@ -19,6 +19,8 @@
     "style.mss",
     "water.mss",
     "roads.mss",
+    "rails.mss",
+    "barriers.mss",
     "areas.mss"
   ],
   "Layer": [
