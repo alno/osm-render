@@ -68,7 +68,7 @@
   #roads::outline[type='pedestrian'][zoom>=17],
   #roads::outline[type='footway'][zoom>=17] {
     line-width: 4;
-    line-color: #714115;
+    line-color: fadeout(#714115,50%);
     line-cap: butt;
 
     [covered=1] {
@@ -79,7 +79,7 @@
 
   #roads::outline[type='track'][zoom>=14],
   #roads::outline[type='path'][zoom>=14] {
-    line-width: 2;
+    line-width: 1.5;
     line-color: fadeout(white, 30%);
     line-cap: round;
   }
@@ -89,7 +89,7 @@
   #roads::outline[type='pedestrian'][zoom<=15],
   #roads::outline[type='footway'][zoom<=15] {
     line-width: 1;
-    line-color: fadeout(white, 30%);
+    line-color: fadeout(white, 50%);
     line-cap: round;
   }
 
@@ -100,7 +100,7 @@
   #roads::inline[type='path'] {
     line-width: 1;
     line-color: #714115;
-    line-dasharray: 3, 3;
+    line-dasharray: 4, 4;
     line-cap: round;
   }
 
@@ -569,7 +569,7 @@
       polygon-fill: @footway;
     }
     [zoom<=14] {
-      polygon-fill: fadeout(@footway,20%);
+      polygon-fill: fadeout(@footway,30%);
     }
   }
 
@@ -581,7 +581,7 @@
 
   [type='footway'],
   [type='pedestrian'] {
-    line-color: #714115;
+    line-color: fadeout(#714115, 50%);
   }
 
   [zoom>=17] {
