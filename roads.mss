@@ -295,8 +295,8 @@
         line-width: 2;
       }
       [zoom<=11] {
-        line-color: desaturate(@tri_road_color_out, 20%);
-        line-width: 0.7;
+        line-color: desaturate(@tri_road_color_out, 15%);
+        line-width: 1.0;
       }
 
       [covered=1] {
@@ -337,9 +337,13 @@
       [zoom=14] {
         line-width: 2.5;
       }
-      [zoom<=13] {
+      [zoom>11][zoom<=13] {
         line-color: desaturate(@tri_road_color_out, 20%);
-        line-width: 0.5;
+        line-width: 0.7;
+      }
+      [zoom<=11] {
+        line-color: desaturate(@tri_road_color_out, 20%);
+        line-width: 0.4;
       }
 
       [covered=1] {
