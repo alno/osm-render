@@ -21,7 +21,8 @@
     "roads.mss",
     "rails.mss",
     "barriers.mss",
-    "areas.mss"
+    "areas.mss",
+    "places.mss"
   ],
   "Layer": [
     {
