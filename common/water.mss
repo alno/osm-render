@@ -85,6 +85,6 @@
   text-min-distance: 20;
   text-min-padding: 2;
   text-wrap-width: 40;
-  text-halo-fill: fadeout(white, 20%);
-  text-halo-radius: 2;
+  text-halo-fill: white;
+  text-halo-radius: 1;
 }

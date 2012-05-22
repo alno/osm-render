@@ -16,7 +16,7 @@
   text-spacing: 200;
   text-min-distance: 10;
   text-placement-type: simple;
-  text-halo-fill: white;
+  text-halo-fill: fadeout(white, 20%);
   text-avoid-edges: true;
   text-halo-radius: 2;
   text-placement: line;
@@ -80,7 +80,7 @@
   #roads::outline[type='track'][zoom>=14],
   #roads::outline[type='path'][zoom>=14] {
     line-width: 2;
-    line-color: white;
+    line-color: fadeout(white, 30%);
     line-cap: round;
   }
 
@@ -89,7 +89,7 @@
   #roads::outline[type='pedestrian'][zoom<=15],
   #roads::outline[type='footway'][zoom<=15] {
     line-width: 1;
-    line-color: white;
+    line-color: fadeout(white, 30%);
     line-cap: round;
   }
 
@@ -556,11 +556,21 @@
 }
 
 #squares {
-  polygon-fill: white;
+  [zoom>=15] {
+      polygon-fill: white;
+  }
+  [zoom<=14] {
+    polygon-fill: fadeout(white,20%);
+  }
 
   [type='footway'],
   [type='pedestrian'] {
-    polygon-fill: @footway;
+    [zoom>=15] {
+      polygon-fill: @footway;
+    }
+    [zoom<=14] {
+      polygon-fill: fadeout(@footway,20%);
+    }
   }
 
 }
