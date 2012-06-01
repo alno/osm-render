@@ -79,35 +79,28 @@
     }
   }
 
-  #roads::outline[type='track'][zoom>=14],
-  #roads::outline[type='path'][zoom>=14] {
-    line-width: 1.5;
-    line-color: fadeout(white, 30%);
-    line-cap: round;
-  }
-
-  #roads::outline[type='track'][zoom<=13],
-  #roads::outline[type='path'][zoom<=13],
-  #roads::outline[type='pedestrian'][zoom<=15],
-  #roads::outline[type='footway'][zoom<=15] {
-    line-width: 1;
-    line-color: fadeout(white, 50%);
-    line-cap: round;
-  }
-
   #road_bridges::path_inline[type='footway'],
   #road_bridges::path_inline[type='track'],
   #road_bridges::path_inline[type='path'],
   #roads::inline[type='track'],
   #roads::inline[type='path'] {
-    line-width: 1;
-    line-color: @track;
+    line-width: 0.6;
+    line-color: desaturate(@track, 50%);
     line-dasharray: 4, 4;
     line-cap: round;
+
+    [zoom>=14] {
+      line-width: 0.8;
+      line-color: @track;
+    }
+    [zoom>=16] {
+      line-width: 1;
+      line-dasharray: 6, 6;
+    }
   }
 
-  #roads::inline[type='pedestrian'][zoom=16],
-  #roads::inline[type='footway'][zoom=16] {
+  #roads::inline[type='pedestrian'][zoom>=16],
+  #roads::inline[type='footway'][zoom>=16] {
     line-width: 1.5;
     line-color: @footway;
     line-cap: round;
@@ -116,33 +109,24 @@
       line-dasharray: 3, 3;
       line-cap: butt;
     }
+
+    [zoom>=17] {
+      line-width: 3;
+    }
   }
 
-  #roads::inline[type='pedestrian'][zoom=17],
-  #roads::inline[type='footway'][zoom>=17] {
-    line-width: 3;
-    line-color: @footway;
-    line-cap: round;
+  #roads::inline[type='steps'][zoom>=14] {
+    line-width: 2;
+    line-color: @path;
+    line-dasharray: 1, 1;
 
-    [covered=1] {
-      line-dasharray: 3, 3;
+    [zoom>=17] {
+      line-width: 4;
+      line-dasharray: 2, 1;
       line-cap: butt;
     }
   }
 
-  #roads::inline[type='steps'][zoom>=17] {
-    line-width: 4;
-    line-color: @path;
-    line-dasharray: 2, 1;
-    line-cap: butt;
-  }
-
-  #roads::inline[type='steps'][zoom<17][zoom>=14] {
-    line-width: 2;
-    line-color: @path;
-    line-dasharray: 1, 1;
-    line-cap: butt;
-  }
 }
 
 #roads[zoom<=12][length>1000] {
