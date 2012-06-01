@@ -1,8 +1,9 @@
 @font_bold: "Ubuntu Bold";
 @font: "Ubuntu Regular";
+@background: #f7e3c7;
 
 Map {
-  background-color: #f7e3c7;
+  background-color: @background;
 }
 
 #buildings[zoom>=12] {

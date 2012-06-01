@@ -9,7 +9,8 @@
 
 @footway: #eee;
 @track: #714115;
-@path: #7b612e;
+@path: #504530;
+@steps: #807660;
 
 #road_labels[zoom>=13] {
   text-name: "[name]";
@@ -79,13 +80,10 @@
     }
   }
 
-  #road_bridges::path_inline[type='footway'],
   #road_bridges::path_inline[type='track'],
-  #road_bridges::path_inline[type='path'],
-  #roads::inline[type='track'],
-  #roads::inline[type='path'] {
+  #roads::inline[type='track'] {
     line-width: 0.6;
-    line-color: desaturate(@track, 50%);
+    line-color: fadeout(@track, 20%);
     line-dasharray: 4, 4;
     line-cap: round;
 
@@ -96,6 +94,25 @@
     [zoom>=16] {
       line-width: 1;
       line-dasharray: 6, 6;
+    }
+  }
+
+  #road_bridges::path_inline[type='footway'],
+  #road_bridges::path_inline[type='path'],
+  #roads::inline[type='path'] {
+    line-width: 0.6;
+    line-color: fadeout(@path, 20%);
+    line-dasharray: 2, 2;
+    line-cap: round;
+
+    [zoom>=14] {
+      line-width: 0.8;
+      line-color: fadeout(@path, 10%);
+      line-dasharray: 3, 3;
+    }
+    [zoom>=16] {
+      line-width: 1;
+      line-color: @path;
     }
   }
 
@@ -126,7 +143,7 @@
 
   #roads::inline[type='steps'][zoom>=14] {
     line-width: 2;
-    line-color: @path;
+    line-color: @steps;
     line-dasharray: 1, 1;
 
     [zoom>=17] {
@@ -149,6 +166,30 @@
 }
 
 ::outline {
+  #roads[type='cutline'][zoom>=11] {
+    line-width: 0.5;
+    line-color: fadeout(@background, 40%);
+
+    [zoom>=12] {
+      line-width: 1;
+    }
+    [zoom>=13] {
+      line-width: 1.5;
+    }
+    [zoom>=14] {
+      line-width: 2;
+    }
+    [zoom>=15] {
+      line-width: 3;
+    }
+    [zoom>=16] {
+      line-width: 4;
+    }
+    [zoom>=17] {
+      line-width: 6;
+    }
+  }
+
   [type='motorway'],
   [type='trunk'] {
 
