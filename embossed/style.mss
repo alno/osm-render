@@ -85,3 +85,8 @@ Map {
   raster-opacity: 0.3;
   raster-scaling: gaussian;
 }
+
+#contours {
+  line-color: fadeout(#333, 75%);
+  line-width: 0.5;
+}

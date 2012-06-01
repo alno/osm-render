@@ -61,6 +61,17 @@
       "name": "hillshade"
     },
     {
+      "geometry": "linestring",
+      "id": "contours",
+      "class": "",
+      "Datasource": {
+        "file": "/home/alno/Projects/Map/mapapp/tmp/heights/contours.shp"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "name": "contours"
+    },
+    {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
