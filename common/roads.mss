@@ -47,7 +47,7 @@
   shield-min-padding: 10;
 }
 
-.roads[zoom=13][length>500],
+.roads[zoom=13][length>300],
 .roads[zoom=14][length>100],
 .roads[zoom>=15] {
 
@@ -99,15 +99,24 @@
     }
   }
 
-  #roads::inline[type='pedestrian'][zoom>=16],
-  #roads::inline[type='footway'][zoom>=16] {
-    line-width: 1.5;
+  #roads::inline[type='pedestrian'],
+  #roads::inline[type='footway'] {
+    line-width: 0.4;
     line-color: @footway;
     line-cap: round;
 
     [covered=1] {
       line-dasharray: 3, 3;
       line-cap: butt;
+    }
+
+    [zoom>=14] {
+      line-width: 0.8;
+    }
+
+    [zoom>=16] {
+      line-color: @footway;
+      line-width: 1.5;
     }
 
     [zoom>=17] {
