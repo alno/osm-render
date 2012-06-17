@@ -1,27 +1,34 @@
 @education: #eef0a7;
 @construction: #cec976;
-@cemetery: #9cc099;
+@cemetery: #a5c4a2;
 @industrial: #ccbdcc;
 @garages: #dddada;
 @quarry: #cccaca;
-@residential: #dae0ba;
-@grass: #b2d584;
-@farm: #c9d989;
-@forest: #79aa62;
+@residential: #d4d6b0;
+@parks: #b1d77d;
+@grass: #b4d186;
+@farm: #c0cf85;
+@forest: #70aa60;
 @scrub: lighten(@forest, 8%);
 @military: #f1c2b2;
 @fuel: #a493bb;
 
-#territories[zoom<10][area>10000] {
+#territories[zoom=8][area>10000],
+#territories[zoom<8][area>100000]{
 
   [type='forest'],
   [type='wood'] {
     polygon-fill: @forest;
   }
 
+  [type='meadow'],
+  [type='grass'] {
+    polygon-fill: @grass;
+  }
+
 }
 
-#territories[zoom>=10] {
+#territories[zoom>=9] {
 
   [type='forest'],
   [type='wood'] {
@@ -189,14 +196,14 @@
   [type='common'],
   [type='garden'],
   [type='zoo'] {
-    polygon-fill: #b2e079;
+    polygon-fill: @parks;
   }
 
   [type='stadium'],
   [type='pitch'],
   [type='track'],
   [type='sports_centre'] {
-    polygon-fill: #94d58c;
+    polygon-fill: #81bd79;
   }
 
   [type='grave_yard'],
