@@ -29,8 +29,8 @@
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_territories",
-        "key_field": "id",
+        "table": "render_territories",
+        "key_field": "",
         "geometry_field": "geometry",
         "dbname": "gis",
         "host": "localhost",
@@ -38,22 +38,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "territories",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "territories"
     },
     {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_objects",
+        "table": "render_areas",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -62,22 +62,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "areas",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "areas"
     },
     {
       "geometry": "linestring",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_waterways",
+        "table": "render_waterways",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -86,22 +86,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "waterways",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "waterways"
     },
     {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_waterareas",
+        "table": "render_waterareas",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -110,22 +110,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "waterareas",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "waterareas"
     },
     {
       "geometry": "linestring",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_barriers",
+        "table": "render_barriers",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -134,22 +134,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "barriers",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "barriers"
     },
     {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "((SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM osm_squares) UNION (SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM osm_objects WHERE type='parking')) AS t",
+        "table": "((SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM render_squares) UNION (SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM render_areas WHERE type='parking')) AS t",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -158,22 +158,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "square_outlines",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "square_outlines"
     },
     {
       "geometry": "linestring",
       "Datasource": {
         "type": "postgis",
-        "table": "(SELECT *, tags->'covered' AS covered, tags->'tunnel' AS tunnel , ST_Length(geometry) AS length, ST_Area(geometry) AS area FROM osm_roads) AS t",
+        "table": "(SELECT *, tags->'covered' AS covered, tags->'tunnel' AS tunnel , ST_Length(geometry) AS length, ST_Area(geometry) AS area FROM render_roads) AS t",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -182,22 +182,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "roads",
       "class": "roads",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "roads"
     },
     {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "((SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM osm_squares) UNION (SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM osm_objects WHERE type='parking')) AS t",
+        "table": "((SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM render_squares) UNION (SELECT id,geometry,type, tags->'covered' AS covered, ST_Area(geometry) AS area FROM render_areas WHERE type='parking')) AS t",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -206,22 +206,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "squares",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "squares"
     },
     {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "(SELECT *, COALESCE(regexp_replace(tags->'building:levels', '[,;].*', '')::integer, 3) AS levels FROM osm_buildings ORDER BY st_y(st_centroid(geometry(geometry))) DESC) AS t",
+        "table": "(SELECT *, COALESCE(regexp_replace(tags->'building:levels', '[,;].*', '')::integer, 3) AS levels FROM render_buildings ORDER BY st_y(st_centroid(geometry(geometry))) DESC) AS t",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -230,22 +230,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "buildings",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "buildings"
     },
     {
       "geometry": "linestring",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_rails",
+        "table": "render_rails",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -254,22 +254,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "rails",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "rails"
     },
     {
       "geometry": "linestring",
       "Datasource": {
         "type": "postgis",
-        "table": "(SELECT *, tags->'covered' AS covered, tags->'tunnel' AS tunnel , ST_Length(geometry) AS length FROM osm_roads WHERE (tags->'bridge') IS NOT NULL) AS t",
+        "table": "(SELECT *, tags->'covered' AS covered, tags->'tunnel' AS tunnel , ST_Length(geometry) AS length FROM render_roads WHERE (tags->'bridge') IS NOT NULL) AS t",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -278,22 +278,62 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "road_bridges",
       "class": "roads",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "road_bridges"
+    },
+    {
+      "geometry": "linestring",
+      "Datasource": {
+        "type": "postgis",
+        "table": "render_powerlines",
+        "extent": "",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "dbname": "gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "gis",
+        "password": "zsedcft"
+      },
+      "id": "powerlines",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "powerlines"
+    },
+    {
+      "geometry": "point",
+      "Datasource": {
+        "type": "postgis",
+        "table": "render_powerpoints",
+        "extent": "",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "dbname": "gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "gis",
+        "password": "zsedcft"
+      },
+      "id": "powerpoints",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "powerpoints"
     },
     {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_places",
+        "table": "render_places",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -302,22 +342,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "place_labels",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "place_labels"
     },
     {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_buildings",
+        "table": "render_buildings",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -326,22 +366,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "building_labels",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "building_labels"
     },
     {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "(SELECT * FROM osm_objects WHERE name IS NOT NULL) AS t",
+        "table": "(SELECT * FROM render_areas WHERE name IS NOT NULL) AS t",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -350,23 +390,23 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "area_labels",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "area_labels"
     },
     {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "(SELECT * FROM osm_territories WHERE name IS NOT NULL) AS t",
-        "key_field": "id",
+        "table": "render_territories",
+        "key_field": "",
         "geometry_field": "geometry",
         "dbname": "gis",
         "host": "localhost",
@@ -374,22 +414,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "territory_labels",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "territory_labels"
     },
     {
       "geometry": "linestring",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_roads",
+        "table": "render_roads",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -398,22 +438,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "road_labels",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "road_labels"
     },
     {
       "geometry": "polygon",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_waterareas",
+        "table": "render_waterareas",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -422,22 +462,22 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "waterarea_labels",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "waterarea_labels"
     },
     {
       "geometry": "linestring",
       "Datasource": {
         "type": "postgis",
-        "table": "osm_waterways",
+        "table": "render_waterways",
         "key_field": "id",
         "geometry_field": "geometry",
         "dbname": "gis",
@@ -446,15 +486,15 @@
         "user": "gis",
         "password": "zsedcft",
         "st_prefix": true,
-        "srid": 4326,
+        "srid": 900913,
         "estimate_extent": false,
         "extent_from_subquery": false,
-        "extent": "-180,-90,180,89.99"
+        "extent": ""
       },
       "id": "waterway_labels",
       "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "name": "waterway_labels"
     }
   ],

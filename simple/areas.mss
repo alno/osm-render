@@ -8,15 +8,20 @@
 @grass: #b2d584;
 @farm: #c9d989;
 @forest: #609e4b;
+@scrub: lighten(@forest, 8%);
 @military: #f1c2b2;
 @fuel: #a493bb;
 
-#territories[type='forest'],
-#territories[type='wood'] {
-  polygon-fill: @forest;
-}
-
 #territories {
+
+  [type='forest'],
+  [type='wood'] {
+    polygon-fill: @forest;
+  }
+
+  [type='scrub'] {
+    polygon-fill: @scrub;
+  }
 
   [type='beach'] {
     polygon-fill: #f6f699;
