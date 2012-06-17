@@ -7,12 +7,21 @@
 @residential: #dae0ba;
 @grass: #b2d584;
 @farm: #c9d989;
-@forest: #609e4b;
+@forest: #79aa62;
 @scrub: lighten(@forest, 8%);
 @military: #f1c2b2;
 @fuel: #a493bb;
 
-#territories {
+#territories[zoom<10][area>10000] {
+
+  [type='forest'],
+  [type='wood'] {
+    polygon-fill: @forest;
+  }
+
+}
+
+#territories[zoom>=10] {
 
   [type='forest'],
   [type='wood'] {
@@ -42,7 +51,9 @@
     line-pattern-file: url('images/cliff-1.png');
     polygon-fill: @quarry;
   }
+}
 
+#territories[zoom>=13] {
   [type='industrial'] {
     polygon-fill: @industrial;
   }
@@ -154,7 +165,19 @@
 
 }
 
-#areas {
+#places[zoom<=13] {
+  polygon-fill: #b59e94;
+  polygon-opacity: 0.25;
+
+  [zoom<=12] {
+    polygon-opacity: 0.3;
+  }
+  [zoom<=11] {
+    polygon-opacity: 0.5;
+  }
+}
+
+#areas[zoom>=13] {
   [type='attraction'] {
     line-width: 1px;
     line-color: #8b712e;

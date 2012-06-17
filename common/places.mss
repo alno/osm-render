@@ -8,7 +8,7 @@
   text-size: 20;
   text-fill: #cc2222;
   text-transform: uppercase;
-  text-min-padding: 2;
+  text-min-padding: 10;
 }
 
 #place_labels[zoom<14][type='town'] {
@@ -19,7 +19,7 @@
   text-halo-radius: 2;
   text-size: 16;
   text-fill: #000;
-  text-min-padding: 2;
+  text-min-padding: 6;
 }
 
 #place_labels[zoom>=10][zoom<14][type='village'] {

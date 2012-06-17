@@ -155,12 +155,12 @@
 
 }
 
-#roads[zoom<=12][length>1000] {
+#roads[zoom>=11][zoom<=12][length>1000] {
   ::inline[type='footway'][length>1000],
   ::inline[type='track'][length>1000],
   ::inline[type='path'] {
-    line-color: desaturate(@track, 10%);
-    line-width: 0.5;
+    line-color: desaturate(@track, 20%);
+    line-width: 0.3;
     line-dasharray: 2, 2;
   }
 }
@@ -197,7 +197,13 @@
       line-color: @pri_road_color_out;
       line-cap: round;
 
-      [zoom<=12] {
+      [zoom<=10] {
+        line-width: 6;
+      }
+      [zoom=11] {
+        line-width: 7;
+      }
+      [zoom=12] {
         line-width: 8;
       }
 
@@ -208,6 +214,7 @@
         line-cap: butt;
       }
     }
+
     #road_bridges[zoom>12] {
       line-color: darken(@pri_road_color_out, 70%);
       line-cap: butt;
@@ -242,7 +249,10 @@
       line-color: @pri_road_color_out;
       line-cap: round;
 
-      [zoom<=12] {
+      [zoom<=11] {
+        line-width: 4;
+      }
+      [zoom=12] {
         line-width: 5;
       }
 
@@ -288,8 +298,18 @@
       [zoom=13] {
         line-width: 4;
       }
-      [zoom<=12] {
+      [zoom=12] {
         line-width: 3;
+      }
+      [zoom=11] {
+        line-width: 2.5;
+      }
+      [zoom=10] {
+        line-width: 1.7;
+      }
+      [zoom<=9] {
+        line-width: 1;
+        line-color: fadeout(desaturate(@sec_road_color_out, 20%),20%);
       }
 
       [covered=1] {
@@ -485,7 +505,7 @@
   }
 }
 
-::inline_2_sec {
+::inline_2_sec[zoom>=10] {
   [type='secondary'],
   [type='secondary_link'] {
     #roads, #road_bridges[zoom>13] {
@@ -516,8 +536,14 @@
     #roads[zoom=13] {
       line-width: 3;
     }
-    #roads[zoom<=12] {
+    #roads[zoom=12] {
       line-width: 2;
+    }
+    #roads[zoom=11] {
+      line-width: 1.5;
+    }
+    #roads[zoom<=10] {
+      line-width: 1;
     }
   }
 }
@@ -555,7 +581,10 @@
     #roads[zoom=13], #road_bridges[zoom=13] {
       line-width: 4;
     }
-    #roads[zoom<=12] {
+    #roads[zoom=12] {
+      line-width: 3.5;
+    }
+    #roads[zoom<=11] {
       line-width: 3;
     }
 
@@ -592,8 +621,14 @@
     #roads[zoom=13], #road_bridges[zoom=13] {
       line-width: 7;
     }
-    #roads[zoom<=12] {
+    #roads[zoom=12] {
       line-width: 6;
+    }
+    #roads[zoom=11] {
+      line-width: 5.5;
+    }
+    #roads[zoom<=10] {
+      line-width: 5;
     }
   }
 }

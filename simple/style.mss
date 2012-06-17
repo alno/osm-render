@@ -1,6 +1,6 @@
 @font_bold: "Ubuntu Bold";
 @font: "Ubuntu Regular";
-@background: #dfd2c0;
+@background: #e3d7c4;
 
 Map {
   background-color: @background;
