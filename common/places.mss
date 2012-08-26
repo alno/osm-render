@@ -8,6 +8,7 @@
   text-size: 20;
   text-fill: #cc2222;
   text-transform: uppercase;
+  text-min-distance: 30;
   text-min-padding: 10;
 }
 
@@ -19,6 +20,7 @@
   text-halo-radius: 2;
   text-size: 16;
   text-fill: #000;
+  text-min-distance: 30;
   text-min-padding: 6;
 }
 
