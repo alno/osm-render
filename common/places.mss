@@ -1,4 +1,16 @@
 
+#places[zoom<=13] {
+  polygon-fill: #b59e94;
+  polygon-opacity: 0.25;
+
+  [zoom<=12] {
+    polygon-opacity: 0.3;
+  }
+  [zoom<=11] {
+    polygon-opacity: 0.5;
+  }
+}
+
 #place_labels[zoom<14][type='city'] {
   text-wrap-width: 40;
   text-face-name: @font_bold;

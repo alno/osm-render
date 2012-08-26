@@ -13,8 +13,8 @@
 @military: #f1c2b2;
 @fuel: #a493bb;
 
-#territories[zoom=8][area>10000],
-#territories[zoom<8][area>100000]{
+#territories_gen[zoom<=8],
+#territories[zoom>=9] {
 
   [type='forest'],
   [type='wood'] {
@@ -26,14 +26,16 @@
     polygon-fill: @grass;
   }
 
+  [type='allotments'],
+  [type='farm'],
+  [type='farmland'],
+  [type='farmyard'] {
+    polygon-fill: @farm;
+  }
+
 }
 
 #territories[zoom>=9] {
-
-  [type='forest'],
-  [type='wood'] {
-    polygon-fill: @forest;
-  }
 
   [type='scrub'] {
     polygon-fill: @scrub;
@@ -47,8 +49,6 @@
     /* TODO Болота */
   }
 
-  [type='meadow'],
-  [type='grass'],
   [type='recreation_ground']
   [type='village_green'] {
     polygon-fill: @grass;
@@ -58,9 +58,18 @@
     line-pattern-file: url('images/cliff-1.png');
     polygon-fill: @quarry;
   }
+
+  [type='military'] {
+    polygon-fill: @military;
+    line-color: darken(@military, 20%);
+    line-width: 1;
+  }
+
 }
 
+/* Landuses, visible only on high zooms */
 #territories[zoom>=13] {
+
   [type='industrial'] {
     polygon-fill: @industrial;
   }
@@ -75,19 +84,6 @@
 
   [type='garages'] {
     polygon-fill: @garages;
-  }
-
-  [type='allotments'],
-  [type='farm'],
-  [type='farmland'],
-  [type='farmyard'] {
-    polygon-fill: @farm;
-  }
-
-  [type='military'] {
-    polygon-fill: @military;
-    line-color: darken(@military, 20%);
-    line-width: 1;
   }
 
 }
@@ -170,18 +166,6 @@
     }
   }
 
-}
-
-#places[zoom<=13] {
-  polygon-fill: #b59e94;
-  polygon-opacity: 0.25;
-
-  [zoom<=12] {
-    polygon-opacity: 0.3;
-  }
-  [zoom<=11] {
-    polygon-opacity: 0.5;
-  }
 }
 
 #areas[zoom>=13] {
