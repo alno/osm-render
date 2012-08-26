@@ -22,7 +22,8 @@
     "rails.mss",
     "barriers.mss",
     "areas.mss",
-    "places.mss"
+    "places.mss",
+    "communications.mss"
   ],
   "Layer": [
     {
