@@ -46,7 +46,12 @@
   }
 
   [type='wetland'] {
-    /* TODO Болота */
+    [zoom>=16] {
+      polygon-pattern-file: url('images/wetland-0.png');
+    }
+    [zoom<=15] {
+      polygon-pattern-file: url('images/wetland-1.png');
+    }
   }
 
   [type='recreation_ground']
