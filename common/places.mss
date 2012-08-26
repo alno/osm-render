@@ -11,7 +11,7 @@
   text-min-padding: 10;
 }
 
-#place_labels[zoom<14][type='town'] {
+#place_labels[zoom<15][type='town'] {
   text-wrap-width: 40;
   text-face-name: @font;
   text-name: "[name]";
@@ -22,7 +22,8 @@
   text-min-padding: 6;
 }
 
-#place_labels[zoom>=10][zoom<14][type='village'] {
+#place_labels[zoom>=10][zoom<=16][type='village'],
+#place_labels[zoom>=10][zoom<=16][type='hamlet'] {
   text-wrap-width: 40;
   text-face-name: @font;
   text-name: "[name]";
