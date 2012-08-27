@@ -17,15 +17,15 @@
   text-fill: #333;
   text-face-name: @font;
   text-spacing: 200;
-  text-min-distance: 10;
   text-placement-type: simple;
   text-halo-fill: fadeout(white, 20%);
   text-avoid-edges: true;
   text-halo-radius: 2;
   text-placement: line;
   text-placement-type: simple;
-  text-spacing: 200;
-  text-min-padding: 20;
+  text-spacing: 150;
+  text-min-distance: 10;
+  text-min-padding: 10;
 
   [zoom >= 15] {
     text-size: 12;
